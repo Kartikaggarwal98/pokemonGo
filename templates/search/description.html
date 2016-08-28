@@ -18,14 +18,14 @@
 		<meta property="og:title" content="{{pokemon.pokemon_name}} Pokemon"/>
 		<meta property="og:description" content=""/>
 		<meta property="og:image" content="{{pokemon.pokemon_image}}"/> 
-		<meta property="og:site_name" content="fathomless-garden-39911.herokuapp.com"/> 
+		<meta property="og:site_name" content="pokedexweb.herokuapp.com"/> 
 
-		<meta property="og:url" content="http://fathomless-garden-39911.herokuapp.com/pokemon/{{pokemon.id}}/{{pokemon.pokemon_name}}" />
-		<meta property="article:author" content="http://facebook.com/one.saurav.tomar" />
-		<meta property="article:publisher" content="https://www.facebook.com/one.saurav.tomar"/>
+		<meta property="og:url" content="http://pokedexweb.herokuapp.com/pokemon/{{pokemon.id}}/{{pokemon.pokemon_name}}" />
+		<meta property="article:author" content="http://facebook.com/kartikagg98" />
+		<meta property="article:publisher" content="https://www.facebook.com/kartikagg98"/>
 
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:site" content="@sauravtom" />
+		<meta name="twitter:site" content="@aggarwal_kartik" />
 		<meta name="twitter:title" content="{{pokemon.pokemon_name}} Pokemon" />
 		<meta name="twitter:description" content="poke-image" />
     	<meta name="twitter:text" content="Pika" />
@@ -50,7 +50,7 @@
 				<a href="https://twitter.com/home?status=http%3A//pokedexweb.herokuapp.com/pokemon/{{pokemon.id}}"><button class='btn btn-success'>Share on Twitter</button></a><br>
 		</div>
 		<div class='row'>
-				<a href="https://plus.google.com/share?url=http%3A//pokedexweb.herokuapp.com/pokemon/{{pokemon.id}}"><button class='btn btn-success'>Share on Google+</button></a><br>
+				<a href="https://plus.google.com/share?url=http%3A//pokedexweb.herokuapp.com/pokemon/{{pokemon.id}}"><button class='btn btn-warning'>Share on Google+</button></a><br>
 		</div>
 		<div class='row'>
 				<a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A//pokedexweb.herokuapp.com/&title=&summary=&source="><button class='btn btn-success'>Share on LinkedIn</button></a>
@@ -63,14 +63,23 @@
 				<a href="mailto:kartikaggarwal98@gmail.com?&cc=kartikaggarwal98@gmail.com&bcc=kartikaggarwal98@gmail.com&subject=hello world&body=hello%20pokemon"><button class='btn btn-primary'>Mail to</button></a>
 		</div>
 		<div class='row'>
-				<a href="whatsapp://send?text=http%3A//pokedexweb.herokuapp.com/pokemon/{{pokemon.id}}" data-action="share/whatsapp/share"><button class='btn btn-danger'>Whatsapp</button></a>
+				<a id='whatsapp' href="whatsapp://send?text=http%3A//pokedexweb.herokuapp.com/pokemon/{{pokemon.id}}" data-action="share/whatsapp/share"><button class='btn btn-danger'>Whatsapp</button></a>
 		</div>
 	</div>
 </div>
 
 {% endblock content %}
 
+{% block scripts %}
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//alert(navigator.userAgent);
+			$('#whatsapp').hide();
+			document.getElementById('whatsapp').style.display = 'none';
 
+		});
+	</script>
+{% endblock scripts %}
 
 
 
