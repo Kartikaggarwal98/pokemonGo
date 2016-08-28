@@ -63,7 +63,7 @@
 				<a href="mailto:kartikaggarwal98@gmail.com?&cc=kartikaggarwal98@gmail.com&bcc=kartikaggarwal98@gmail.com&subject=hello world&body=hello%20pokemon"><button class='btn btn-primary'>Mail to</button></a>
 		</div>
 		<div class='row'>
-				<a id='whatsapp' href="whatsapp://send?text=http%3A//pokedexweb.herokuapp.com/pokemon/{{pokemon.id}}" data-action="share/whatsapp/share"><button class='btn btn-danger'>Whatsapp</button></a>
+				<a id='whatsapp' target='_blank' href="whatsapp://send?text=http%3A//pokedexweb.herokuapp.com/pokemon/{{pokemon.id}}" data-action="share/whatsapp/share"><button class='btn btn-danger'>Whatsapp</button></a>
 		</div>
 	</div>
 </div>
@@ -72,12 +72,16 @@
 
 {% block scripts %}
 	<script type="text/javascript">
-		$(document).ready(function(){
-			//alert(navigator.userAgent);
-			$('#whatsapp').hide();
-			document.getElementById('whatsapp').style.display = 'none';
-
-		});
+	$(document).ready(function(){
+		alert(navigator.userAgent)
+		if(navigator.userAgent.match('Android')==null){
+		//user is on browser
+		$('#whatsapp').hide();
+		//documents.getElementsById('whatsapp').style.display = 'none' ;
+		}
+		else{
+			//user is on website
+		}
 	</script>
 {% endblock scripts %}
 
