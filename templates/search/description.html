@@ -6,6 +6,7 @@
 		img{
 			width: 350px;	
 		}
+		
 	</style>
 {% endblock head %}
 
@@ -26,7 +27,8 @@
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:site" content="@sauravtom" />
 		<meta name="twitter:title" content="{{pokemon.pokemon_name}} Pokemon" />
-		<meta name="twitter:description" content="" />
+		<meta name="twitter:description" content="poke-image" />
+    	<meta name="twitter:text" content="Pika" />
 		<meta name="twitter:image" content="{{pokemon.pokemon_image}}" />
 
 {% endblock meta %}
@@ -35,10 +37,36 @@
 {% block content %}
 
 <h1>You Searched for #{{pokemon.id}} {{pokemon.pokemon_name}} </h1>
-	
-<img src="{{pokemon.pokemon_image}}">
 
-<button> <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//pokedexweb.herokuapp.com/pokemon/{{pokemon_id}}/{{pokemon_name}}"> Share on Facebook </a></button>
+<div class ='row'>
+	<div class='col-md-6'>
+			<img src="{{pokemon.pokemon_image}}"><br>
+	</div>
+	<div class='col-md-2'>
+		<div class='row'>
+				<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//pokedexweb.herokuapp.com/pokemon/{{pokemon.id}}"><button class='btn btn-success'> Share on Facebook </button></a><br>
+		</div>
+		<div class='row'>
+				<a href="https://twitter.com/home?status=http%3A//pokedexweb.herokuapp.com/pokemon/{{pokemon.id}}"><button class='btn btn-success'>Share on Twitter</button></a><br>
+		</div>
+		<div class='row'>
+				<a href="https://plus.google.com/share?url=http%3A//pokedexweb.herokuapp.com/pokemon/{{pokemon.id}}"><button class='btn btn-success'>Share on Google+</button></a><br>
+		</div>
+		<div class='row'>
+				<a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A//pokedexweb.herokuapp.com/&title=&summary=&source="><button class='btn btn-success'>Share on LinkedIn</button></a>
+		</div>
+		<div class='row'>
+				<a href="https://pinterest.com/pin/create/button/?url=&media=http%3A//pokedexweb.herokuapp.com/&description="><button class='btn btn-success'>Share on Pinterest</button></a>
+		</div>
+
+		<div class='row'>
+				<a href="mailto:kartikaggarwal98@gmail.com?&cc=kartikaggarwal98@gmail.com&bcc=kartikaggarwal98@gmail.com&subject=hello world&body=hello%20pokemon"><button class='btn btn-primary'>Mail to</button></a>
+		</div>
+		<div class='row'>
+				<a href="whatsapp://send?text=The text to share! http%3A//pokedexweb.herokuapp.com/pokemon/{{pokemon.id}} " data-action="share/whatsapp/share"><button class='btn btn-danger'>Whatsapp</button></a>
+		</div>
+	</div>
+</div>
 
 {% endblock content %}
 
