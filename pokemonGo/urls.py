@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     url(r'^searchLISTJS$', 'search.views.srchlistjs', name = 'searchLISTJS'),
     url(r'^edit/(\d+)', 'search.views.edit', name = 'edit'),
 
+    url(r'^oddish/', 'search.views.oddish', name = 'oddish'),
     
     url(r'^p/(?P<page_id>\d+)', 'search.views.index2', name = 'index2'),
 
@@ -26,4 +27,5 @@ urlpatterns = patterns('',
     #named-grouping
     #url(r'^search/(?P<foo>\d+)', 'search.views.srch2', name = 'search2'),
     url(r'^searchREDIRECT/(?P<search_string>[\*\w\-]+)/$', 'search.views.srchredirect', name = 'searchredirect'),
+
 )
