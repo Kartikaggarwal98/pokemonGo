@@ -1,4 +1,3 @@
-
 import os
 os.environ.setdefault('DJANGO_SETTINGS_MODULE','pokemonGo.settings')
 
@@ -7,6 +6,7 @@ django.setup()
 
 from search.models import Pokedex
 from search.views import search_pokemon
+from search.models import Scoreboard
 
 def populate():
 	for pokemon in search_pokemon('*',result_type='dict'):
@@ -30,11 +30,14 @@ def add(pokemon_name,pokemon_image,pokemon_type='N/A'):
 		print pokemon_name
 		return
 
-	showDB()
-
-
+	#showDB()
+def score():
+	p=Scoreboard.objects.get_or_create(user_number='1',total_score='100')[0]
+	p.save()
+	
 if __name__ == '__main__':
 	#add('pikachu2','foo.png')
 	#populate()
 	#showDB()
-	populate()
+	#populate()
+	score()

@@ -16,7 +16,7 @@ urlpatterns = patterns('',
     url(r'^edit/(\d+)', 'search.views.edit', name = 'edit'),
 
     url(r'^p/oddish/','search.views.oddish',name = 'oddish'),
-    
+    url(r'^game/','search.views.game',name = 'game'),
     url(r'^p/(?P<page_id>\d+)', 'search.views.index2', name = 'index2'),
 
     url(r'^pokemon/(?P<pokemon_id>\d+)/(?P<pokemon_name>[\w\-]+)', 'search.views.description', name = 'description'),
